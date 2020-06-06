@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[3.4.1];shiny[1.4.0.2];bootstrap[3.4.1]</script>
+<script src="shared/json2-min.js"></script>
+<script src="shared/jquery.min.js"></script>
+<link href="shared/shiny.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>  
+
+<title>Text Prediction</title>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Data Science Capstone Project</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Text Prediction</h1>
+            <p>Please enter a few words in the input field. Up to five predictions will be updated automatically below. Hit clear to reset the input field.
+            </p>
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter a few words here..." name="line" id="line">
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" id="clear">Clear</button>
+                  </span>
+            </div>
+    <h3>Predictions: 
+          <span id="prediction" class="shiny-text-output"></span>
+    </h3>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Predictions</h2>
+                <p>The predictions for the next word are ordered by their likelihood. </p>
+                <p>
+
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>About the database</h2>
+                <p>About 12 million trigrams and fourgrams each, plus about 326,000 bigrams and 65,000 words. Extracted from training data of more than 60 million words.</p>
+                <p>
+
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>More Information</h2>
+                <p>The source code for the app is at <a href="https://github.com/berndca/TextPrediction">github</a> and a 
+                brief presentation about this app can be found on <a href="https://rpubs.com/berndca/624613">rpubs</a>.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+      
+        <footer>
+            <p>&copy; 2020 Bernd Meyer</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script>
+        $("#clear").click(function() { $('#line').val('');  $('#prediction').text(''); $('#line').focus();  });
+    </script>
+
+</body>
+
+</html>
